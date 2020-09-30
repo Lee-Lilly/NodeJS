@@ -14,7 +14,7 @@ const port = 3000;
 app.all("/hello", (req, res) => {
     //ALL = {GET, POST, PUT, DELETE} requests in received at "/hello" end point 
     // returns Hello Express text in the response
-    res.send("Hello Express!");
+    res.send("Hello Express Run Nodemon!");
 })
 
 app.listen(port, () =>{
