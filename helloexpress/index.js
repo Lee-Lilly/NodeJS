@@ -18,15 +18,15 @@ const port = 3000;
 }) */
 
 app.get("/home/:firstname/:lastname", (req, res) => {
-    // requests is received at "/home" end point 
+    // requests is received at "/home" end point, with input parameters e.g. /home/Emile/Degeilh 
     // returns Welcome text in the response
     res.send(`Welcome ${req.params.firstname}  ${req.params.lastname}`);
 })
 
-app.get("/about", (req, res) => {
-    // request is received at "/about" end point 
-    // returns About text in the response
-    res.send("About us ....");
+app.get("/home/user", (req, res) => {
+    // request is received at "/home/user" end point 
+    // returns an object in JSON format
+    res.json({username: 'John'});
 })
 app.listen(port, () =>{
     console.log(`Server is running on port ${port}.`);

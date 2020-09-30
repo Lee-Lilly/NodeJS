@@ -29,4 +29,12 @@ Procedure:
     >nodemon index.js
 12. or add "dev": "nodemon index.js" to Scripts in package.json, then execute
     > npm run dev
+13. Web server can send response to several different end points
+14. Web server can make response dynamically (with request parameters or an object in JSON)
+    > res.json({key: value})
+    OR
+     > app.get("/home/:firstName/:lastName", (req, res) => {
+    >    res.send(`Welcome ${req.params.firstName} ${req.params.lastName}`);
+    > }
+
 
