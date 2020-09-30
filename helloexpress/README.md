@@ -8,18 +8,25 @@ Procedure:
 2. install express dependencies 
     > npm install express 
 3. import module express using require('express)
-    const express = require('express');
+    > const express = require('express');
 4. initiate an instance of node express.
-    const app = express();
+    > const app = express();
 5. define port.
-    const port = 3000;
+    > const port = 3000;
 6. GET request is done to root endpoint of the express instance ('/') 
-    app.get("/", (Request Listener Function));
+    > app.get("/", (Request Listener Function));
 6. Request Listener Function (RLF) takes two parameters: request & response, res.send() method sends the HTTP response
-    (req, res) => {
-        res.send("Hello Express!);
-    }
-7. app.listen(port, ()=>{...}); 
+    > (req, res) => {
+    >    res.send("Hello Express!);
+    > }
+7. > app.listen(port, ()=>{...}); 
 8. add "start": "node index.js" to "Scripts" in package.json, to specif the start script
-9. go terminal, type "npm start", it will execute "node index.js" 
+9. go terminal, to execute "node index.js" 
+    > npm start
+10. install globally nodemon (detecting the changes in app and restart automatically)
+    > npm install -g nodemon
+11. start project with nodemon
+    >nodemon index.js
+12. or add "dev": "nodemon index.js" to Scripts in package.json, then execute
+    > npm run dev
 
