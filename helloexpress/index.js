@@ -23,6 +23,15 @@ app.get("/home/:firstname/:lastname", (req, res) => {
     res.send(`Welcome ${req.params.firstname}  ${req.params.lastname}`);
 })
 
+app.get("/home/user/:name/:age", (req, res) => {
+    // requests is received at "/home" end point, with input parameters e.g. /home/Emile/Degeilh 
+    // returns Welcome text in the response
+    if (req.params.age >= 18)
+        res.send(`Welcome ${req.params.name}, you are ${req.params.age} years old`);
+    else
+        res.send(`Hello ${req.params.name}, you are too young`);
+})
+
 app.get("/home/user", (req, res) => {
     // request is received at "/home/user" end point 
     // returns an object in JSON format
