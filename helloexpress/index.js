@@ -28,6 +28,17 @@ app.get("/home/user", (req, res) => {
     // returns an object in JSON format
     res.json({username: 'John'});
 })
+
+app.get("/about", (req, res) => {
+    // request is received at "/about" end point 
+    // returns an object in JSON format or resturn status 
+    if(Error)
+        res.sendStatus(404); //print out "Not Found" 
+        //or send an empty status "server not found" 
+        //res.status(404).end();
+    else res.json(result);
+})
+
 app.listen(port, () =>{
     console.log(`Server is running on port ${port}.`);
 })
