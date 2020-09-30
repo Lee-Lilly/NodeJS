@@ -11,12 +11,23 @@ const port = 3000;
 //     res.send("Hello Express!");
 // })
 
-app.all("/hello", (req, res) => {
-    //ALL = {GET, POST, PUT, DELETE} requests in received at "/hello" end point 
+/* app.all("/hello", (req, res) => {
+    // ALL = {GET, POST, PUT, DELETE} requests received at "/hello" end point 
     // returns Hello Express text in the response
     res.send("Hello Express Run Nodemon!");
+}) */
+
+app.get("/home", (req, res) => {
+    // requests is received at "/home" end point 
+    // returns Welcome text in the response
+    res.send("Welcome to our page!");
 })
 
+app.get("/about", (req, res) => {
+    // request is received at "/about" end point 
+    // returns About text in the response
+    res.send("About us ....");
+})
 app.listen(port, () =>{
     console.log(`Server is running on port ${port}.`);
 })
