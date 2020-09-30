@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/Lee-Lilly/NodeJS.git/issues"
   },
-  "homepage": "https://github.com/Lee-Lilly/NodeJS.git#leedegeilh",
+  "homepage": "https://github.com/Lee-Lilly/NodeJS.git#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
