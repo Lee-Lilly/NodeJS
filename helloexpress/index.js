@@ -17,10 +17,10 @@ const port = 3000;
     res.send("Hello Express Run Nodemon!");
 }) */
 
-app.get("/home", (req, res) => {
+app.get("/home/:firstname/:lastname", (req, res) => {
     // requests is received at "/home" end point 
     // returns Welcome text in the response
-    res.send("Welcome to our page!");
+    res.send(`Welcome ${req.params.firstname}  ${req.params.lastname}`);
 })
 
 app.get("/about", (req, res) => {
