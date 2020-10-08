@@ -76,5 +76,6 @@ app.put("/api/movies/:id", (req, res) =>{
     //replace 1 element at place of index
     movies.splice(index, 1, updatedMovie);
 
+    //response of an object in JSON form
     res.json(updatedMovie);
 })
