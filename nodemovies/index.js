@@ -29,7 +29,7 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}.`);
 });
 
-// implement GET {id} functionality, which can be used to search movie by id.
+// implement searching movie by "id" with GET method.
 app.get("/api/movies/:id", (req, res) =>{
     // get target movieID from request parameter
     const movieID = req.params.id;
@@ -45,7 +45,7 @@ app.get("/api/movies/:id", (req, res) =>{
         res.sendStatus(404);
 });
 
-// implement with POST method for adding new movie to the web server app
+// implement adding new movie functionality with POST mthods 
 app.post("/api/movies", (req, res) => {
     // extract a movie object from req.body specified in spread syntax
     // here we use POSTMAN body to get post request in json form
@@ -78,4 +78,13 @@ app.put("/api/movies/:id", (req, res) =>{
 
     //response of an object in JSON form
     res.json(updatedMovie);
+})
+
+// implement delete functionality using delete
+app.delete("/api/movies/:id", (req, res) =>{
+    const id = req.params.id;
+    
+    //keep those movie by id that is not identical to the parameter  
+    movies = movies.filter(movie => movie.id !== id);
+    res.sendStatus(204); //no content
 })
