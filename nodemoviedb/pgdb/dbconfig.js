@@ -11,7 +11,7 @@ const pool = new Pool({
     password: "postgres"
 });
 
-// export our module named as 'query'
+// export our module with a method name 'query'
 // query invokes node-postgres pool.query() function with parameters (text, params) 
 // pool.query() can be used to execute SQL statements to the database
 module.exports = {
