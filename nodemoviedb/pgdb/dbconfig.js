@@ -13,7 +13,7 @@ const pool = new Pool({
 
 // export our module with a method name 'query'
 // query invokes node-postgres pool.query() function with parameters (text, params) 
-// pool.query() can be used to execute SQL statements to the database
+// pool.query() from 'pg' library is used to execute SQL statements to the database
 module.exports = {
     query: (text, params) => pool.query(text, params),
 }
