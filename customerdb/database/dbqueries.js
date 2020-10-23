@@ -9,9 +9,12 @@ const listCustomers = (req, res) => {
     db.query('SELECT * FROM customers', (err, result) => {
         if (err)
             console.error(err);
-        else
-            //result.rows is an array of customers  
-            res.json(result.rows);
+        else {
+            if (result.rows.length > 0)
+                res.json(result.rows);
+            else
+                res.sendStatus(204); // Not Content
+        }
     })
 }
 
@@ -62,7 +65,7 @@ const addCustomer = (req, res) => {
     res.json(newCustomer);
 }
 
-//delete customer
+//delete a customer
 const deleteCustomer = (req, res) => {
     // define query obj
     const delete_query = {
@@ -79,7 +82,7 @@ const deleteCustomer = (req, res) => {
     res.sendStatus(204);
 }
 
-//update Customer
+//update a Customer
 const updateCustomer = (req, res) => {
     //extract edited customer from the request body
     const editedCustomer = req.body;
@@ -99,11 +102,23 @@ const updateCustomer = (req, res) => {
     res.json(editedCustomer);
 }
 
+// delete all customers
+const deleteAll = (req, res) =>{
+
+    db.query("DELETE FROM customers", (err, result) => {
+        if (err)
+            return console.error('Error executing query', err.stack);
+    })
+
+    res.sendStatus(204);
+}
+
 //export methods
 module.exports = {
     getAllcustomers: listCustomers,
     getCustomerbyId: searchCustomer,
     addNewCustomer: addCustomer,
     deleteCustomerbyId: deleteCustomer,
-    updateCustomerbyId: updateCustomer
+    updateCustomerbyId: updateCustomer,
+    deleteAllCustomers: deleteAll
 }
