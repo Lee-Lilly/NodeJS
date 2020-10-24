@@ -110,7 +110,7 @@ const deleteAll = (req, res) =>{
             return console.error('Error executing query', err.stack);
     })
 
-    res.sendStatus(204);
+  //  res.sendStatus(204);
 }
 
 //export methods

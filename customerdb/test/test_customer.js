@@ -1,6 +1,7 @@
 const chai = require('chai');
 const chaihttp = require('chai-http');
 const app = require('../server');
+const query = require('../database/dbqueries');
 
 chai.use(chaihttp);
 
@@ -19,19 +20,23 @@ const should = chai.should();
 //describe() to group test cases that have same target or functionality. 
 
 //test DELETE ALL
-describe('/DELETE ALL customers', () => {
-    it('delete all customers', (done) => {
-        chai.request(app)
-            .delete('/api/customers')
-            .end((err, res) => {
-                res.should.have.status(204);
-                done();
-            });
-    });
-});
+// describe('/DELETE ALL customers', () => {
+//     it('delete all customers', (done) => {
+//         chai.request(app)
+//             .delete('/api/customers')
+//             .end((err, res) => {
+//                 res.should.have.status(204);
+//                 done();
+//             });
+//     });
+// });
 
 //test POST a customer
 describe('/POST customer', ()=>{   
+    beforeEach((done) => {
+        query.deleteAllCustomers();
+        done();
+    });
     // a test case is passed if all assertions return true.
     it('Add a new customer', (done)=>{
         //use chai-http request() function to send POST request. 
