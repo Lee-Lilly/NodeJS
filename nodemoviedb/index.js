@@ -16,11 +16,13 @@ const port = 3000;
 // route for login
 app.post("/login", auth.login);
 
-// POSTMAN post body of a user (email, password)
-// response body is an object ={token: ..}
-// copy the token into the value of Header 'Authorization' 
+// POSTMAN post request body: a User (email, password)
+// response is an object ={token: ..}
+// activate Authorization in request header 
+// copy the token value into the value of Header 'Authorization' 
 
 // route for REST API
+// this goes through two call back functions : authenticate and next  
 app.get("/api/movies", auth.authenticate, query.getAllmovies);
 
 // Get movie by id

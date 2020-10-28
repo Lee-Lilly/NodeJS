@@ -49,7 +49,7 @@ const authenticate = (req, res, next) => {
         res.sendStatus(400).end();
     }
 
-    // Verify the received token
+    // Verify the received token in the request header
     jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
         if (err)
             res.sendStatus(400).end();
