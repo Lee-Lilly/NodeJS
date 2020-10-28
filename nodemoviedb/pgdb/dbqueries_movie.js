@@ -71,11 +71,12 @@ const deleteMovie = (req, res) => {
 
     // delete from database
     db.query(delete_query, (err, result) => {
-        if (err)
+        if (err) 
             return console.error('Error executing query', err.stack);
+        else
+            res.sendStatus(204);
     })
-
-    res.sendStatus(204);
+   
 }
 
 //update movie

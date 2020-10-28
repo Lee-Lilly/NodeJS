@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 const port = 3000;
 
 // use methods exported from dbqueries
-const query = require('./pgdb/dbqueries');
+const query = require('./pgdb/dbqueries_movie');
 
 //get all movies
 app.get("/api/movies", query.getAllmovies);
