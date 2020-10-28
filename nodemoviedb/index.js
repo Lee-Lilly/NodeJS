@@ -37,9 +37,6 @@ app.delete("/api/movies/:id", auth.authenticate, query.deleteMoviebyId);
 //update movie by id
 app.put("/api/movies/:id", auth.authenticate, query.updateMoviebyId);
 
-// route for log in
-
-
 app.listen(port, () => {
   console.log(`Server is running on port ${port}.`);
 });
