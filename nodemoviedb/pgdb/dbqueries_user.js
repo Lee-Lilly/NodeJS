@@ -20,6 +20,7 @@ const getUserByEmail = (email, next) => {
     })
 }
 
+// export the method "getUserByEmail"
 module.exports = {
     getUserByEmail: getUserByEmail
 }
